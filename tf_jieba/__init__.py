@@ -1,0 +1,1 @@
+__short_description__ = "Tensorflow Operation Wrapper of cppjieba (Chinese Word Segamentation)"

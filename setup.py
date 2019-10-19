@@ -40,6 +40,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
 ]
+this_directory = os.path.abspath(os.path.dirname(__file__))
 
 
 def get_short_description():
@@ -53,7 +54,9 @@ def get_short_description():
 
 def get_long_description():
   try:
-    long_description = open("README.rst").read()
+    with open(os.path.join(this_directory, 'README.md'),
+              encoding='utf-8') as f:
+      long_description = f.read()
   except:
     long_description = "No long description!"
   return long_description
@@ -61,9 +64,11 @@ def get_long_description():
 
 def get_license():
   try:
-    license = open("LICENSE").read()
+    with open(os.path.join(this_directory, 'LICENSE'),
+              encoding='utf-8') as f:
+      license = f.read()
   except:
-    print("'__license__' not found in '%s.__init__.py'!" % NAME)
+    print("license not found in '%s.__init__.py'!" % NAME)
     license = ""
   return license
 
@@ -85,7 +90,7 @@ cppjieba_includes = ["third_party/cppjieba/deps",
                      "third_party/cppjieba/include"]
 include_dirs = ['tf_jieba', TF_INCLUDE] + cppjieba_includes
 
-module = Extension('tf_jieba.jieba_op.x_ops',
+module = Extension('tf_jieba.x_ops',
                    sources=glob('tf_jieba/cc/*.cc'),
                    depends=glob('tf_jieba/cc/*.h'),
                    extra_compile_args=complie_args,
@@ -93,11 +98,16 @@ module = Extension('tf_jieba.jieba_op.x_ops',
                    library_dirs=[TF_LIB_INC],
                    libraries=[TF_SO_LIB],
                    language='c++')
+long_description = get_long_description()
+license_ = get_license()
+print(f"long_description: {long_description}")
+print(f"license: {license_}")
 
 setup(
     name=NAME,
     description=get_short_description(),
-    long_description=get_long_description(),
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     version="0.1.0",
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
@@ -110,7 +120,7 @@ setup(
     download_url=DOWNLOAD_URL,
     classifiers=CLASSIFIERS,
     platforms=PLATFORMS,
-    license=get_license(),
+    license=license_,
     install_requires=get_requires(),
     ext_modules=[module]
 )
