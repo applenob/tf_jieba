@@ -1,0 +1,8 @@
+gen
+.idea
+__pycache__
+x_ops.so
+.DS_Store
+build
+dist
+tf_jieba.egg-info

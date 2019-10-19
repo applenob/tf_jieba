@@ -1,0 +1,3 @@
+[submodule "third_party/cppjieba"]
+	path = third_party/cppjieba
+	url = https://github.com/applenob/cppjieba.git
