@@ -27,19 +27,19 @@ def jieba_cut(input_sentence,
               hmm=True):
   if use_file:
     if not os.path.exists(dict_path):
-      raise FileNotFoundError(f"Dict file not found: {dict_path}!")
+      raise FileNotFoundError("Dict file not found: {}!".format(dict_path))
 
     if not os.path.exists(hmm_path):
-      raise FileNotFoundError(f"HMM Model file not found: {hmm_path}!")
+      raise FileNotFoundError("HMM Model file not found: {}!".format(hmm_path))
 
     if not os.path.exists(user_dict_path):
-      raise FileNotFoundError(f"User dict file not found: {user_dict_path}!")
+      raise FileNotFoundError("User dict file not found: {}!".format(user_dict_path))
 
     if not os.path.exists(idf_path):
-      raise FileNotFoundError(f"IDF file not found: {idf_path}!")
+      raise FileNotFoundError("IDF file not found: {}!".format(idf_path))
 
     if not os.path.exists(stop_word_path):
-      raise FileNotFoundError(f"Stop words file not found: {stop_word_path}!")
+      raise FileNotFoundError("Stop words file not found: {}!".format(stop_word_path))
 
     output_sentence = gen_x_ops.jieba_cut(
       input_sentence,

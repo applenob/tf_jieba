@@ -24,6 +24,6 @@ while True:
     if sentence_in == "q":
         break
     res = sess.run(jieba_cut_t, feed_dict={sentence_t: sentence_in})
-    print(f"Raw output: {res}")
-    print(f"Output: {res.decode('utf-8')}")
+    print("Raw output: {}".format(res))
+    print("Output: {}".format(res.decode('utf-8')))
 sess.close()

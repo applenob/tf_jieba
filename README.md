@@ -28,9 +28,15 @@ git clone https://github.com/applenob/cppjieba.git
    test directory now.
 
 ```
-python custom_test.py
+python3 custom_test.py
 ```
 
 Demo output:
 
 ![](imgs/jieba_res.png)
+
+## Support Platform 
+
+- python == 3.6
+- tensorflow >= 1.14.0
+- OS: MacOS / Linux

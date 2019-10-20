@@ -34,8 +34,7 @@ CLASSIFIERS = [
     "Natural Language :: English",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: MacOS",
-    "Operating System :: Unix",
-    "Programming Language :: Python :: 3.3",
+    "Operating System :: POSIX :: Linux",
     "Programming Language :: Python :: 3.4",
     "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
@@ -100,22 +99,22 @@ module = Extension('tf_jieba.x_ops',
                    language='c++')
 long_description = get_long_description()
 license_ = get_license()
-print(f"long_description: {long_description}")
-print(f"license: {license_}")
+print("long_description: {}".format(long_description))
+print("license: {}".format(license_))
 
 setup(
     name=NAME,
     description=get_short_description(),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    version="0.1.2",
+    version="0.2",
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     maintainer=MAINTAINER,
     maintainer_email=MAINTAINER_EMAIL,
     packages=find_packages(),
     include_package_data=INCLUDE_PACKAGE_DATA,
-    package_data={"": ["x_ops*.so"]},
+    package_data={"": ["tf_jieba/x_ops*.so"]},
     url=URL,
     download_url=DOWNLOAD_URL,
     classifiers=CLASSIFIERS,

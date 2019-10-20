@@ -8,7 +8,7 @@ import tf_jieba
 from tf_jieba.jieba_op import jieba_cut
 
 logging.set_verbosity(logging.INFO)
-logging.info(f"tf_jieba path: {tf_jieba.__path__}")
+logging.info("tf_jieba path: {}".format(tf_jieba.__path__))
 
 
 def read_lines_from_text_file(file_path):

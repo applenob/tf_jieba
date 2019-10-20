@@ -6,3 +6,5 @@ x_ops.so
 build
 dist
 tf_jieba.egg-info
+python36venv
+wheelhouse
