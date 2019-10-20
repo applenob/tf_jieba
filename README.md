@@ -43,3 +43,5 @@ Demo output:
 - python == 3.6
 - tensorflow >= 1.14.0
 - OS: MacOS / Linux
+
+Please refer to [my Chinese blog post](https://applenob.github.io/tensorflow/tf_jieba/) for more detail.
