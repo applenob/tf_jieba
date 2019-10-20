@@ -8,6 +8,9 @@ word segmentation tool, [cppjieba](https://github.com/yanyiwu/cppjieba).
 I made some changes from the original cppjieba. This is 
 [my fork of cppjieba](https://github.com/applenob/cppjieba).
 
+Most code of this repo are from Didi's deep learning language platform:
+[Delta](https://github.com/didi/delta)
+
 ## Install
 
 ```bash
