@@ -19,16 +19,7 @@ pip install tf-jieba
 
 ## Usage
 
-1. Clone the cppjieba repository for resource files like model and dict
-   files.
-
-```bash
-git clone https://github.com/applenob/cppjieba.git
-```
-
-2. Download or copy the test python script `custom_test.py` to the same
-   project. You should have `cppjieba` and `custom_test.py` under your
-   test directory now.
+Download or copy the test python script `custom_test.py`. 
 
 ```
 python3 custom_test.py

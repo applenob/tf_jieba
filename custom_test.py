@@ -1,22 +1,8 @@
 import tensorflow as tf
 from tf_jieba.jieba_op import jieba_cut
 
-dict_path = "./cppjieba/dict/jieba.dict.utf8"
-hmm_path = "./cppjieba/dict/hmm_model.utf8"
-user_dict_path = "./cppjieba/dict/user.dict.utf8"
-idf_path = "./cppjieba/dict/idf.utf8"
-stop_word_path = "./cppjieba/dict/stop_words.utf8"
-
 sentence_t = tf.placeholder(dtype=tf.string)
-jieba_cut_t = jieba_cut(
-    sentence_t,
-    use_file=True,
-    hmm=True,
-    dict_path=dict_path,
-    hmm_path=hmm_path,
-    user_dict_path=user_dict_path,
-    idf_path=idf_path,
-    stop_word_path=stop_word_path)
+jieba_cut_t = jieba_cut(sentence_t)
 
 sess = tf.Session()
 while True:

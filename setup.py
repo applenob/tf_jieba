@@ -20,7 +20,6 @@ AUTHOR = "Javen Chen"
 AUTHOR_EMAIL = "applecer@pku.edu.cn"
 MAINTAINER = "Javen Chen"
 MAINTAINER_EMAIL = "applecer@pku.edu.cn"
-INCLUDE_PACKAGE_DATA = True
 REPO_NAME = os.path.basename(os.getcwd())
 URL = "https://github.com/{0}/{1}".format(GITHUB_USER_NAME, REPO_NAME)
 GITHUB_RELEASE_TAG = str(date.today())
@@ -32,11 +31,8 @@ CLASSIFIERS = [
     "Intended Audience :: Education",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
-    "Operating System :: Microsoft :: Windows",
     "Operating System :: MacOS",
     "Operating System :: POSIX :: Linux",
-    "Programming Language :: Python :: 3.4",
-    "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
 ]
 this_directory = os.path.abspath(os.path.dirname(__file__))
@@ -99,22 +95,23 @@ module = Extension('tf_jieba.x_ops',
                    language='c++')
 long_description = get_long_description()
 license_ = get_license()
+packages = find_packages()
 print("long_description: {}".format(long_description))
 print("license: {}".format(license_))
+print("packages: {}".format(packages))
 
 setup(
     name=NAME,
     description=get_short_description(),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    version="0.2",
+    version="0.3",
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     maintainer=MAINTAINER,
     maintainer_email=MAINTAINER_EMAIL,
-    packages=find_packages(),
-    include_package_data=INCLUDE_PACKAGE_DATA,
-    package_data={"": ["tf_jieba/x_ops*.so"]},
+    packages=packages,
+    package_data={"tf_jieba": ["cppjieba_dict/*.utf8"]},
     url=URL,
     download_url=DOWNLOAD_URL,
     classifiers=CLASSIFIERS,
